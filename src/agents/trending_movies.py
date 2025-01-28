@@ -47,7 +47,3 @@ def recommend_trending_movie(query):
     )    
 
     return response.json()['choices'][0]['message']['content']
-
-
-
-# response = recommend_trending_movie("Recommend a comedy movie")

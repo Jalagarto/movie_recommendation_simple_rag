@@ -10,3 +10,5 @@ or run it locally:
 
 to execute tets I use: 
 `poetry run pytest tests/`
+to see the code coverage report:
+`poetry run pytest tests/ --cov=src --cov-report=term-missing --cov-report=xml`
