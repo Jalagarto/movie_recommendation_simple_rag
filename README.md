@@ -28,3 +28,5 @@ Note that main.py is there to be used locally, but not in production
 │   └── utils
 └── tests
 ```
+
+For more info see the [wiki](https://github.com/Jalagarto/movie_recommendation_simple_rag/wiki/Movie-Recommendation-Chatbot-with-RAG)
