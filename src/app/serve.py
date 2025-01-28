@@ -14,7 +14,7 @@ def main():
     
     # Add some description
     st.write("""
-    Movie recommendations for Anjie and Javi! You can:
+    Movie recommendations. You can:
     - Ask for trending movies
     - Search Netflix titles
     - Get general recommendations

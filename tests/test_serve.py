@@ -24,7 +24,7 @@ def test_main(mocker):
     # Assertions
     mock_st.title.assert_called_once_with("Movie Recommendation Chatbot")
     mock_st.write.assert_any_call("""
-    Movie recommendations for Anjie and Javi! You can:
+    Movie recommendations. You can:
     - Ask for trending movies
     - Search Netflix titles
     - Get general recommendations
