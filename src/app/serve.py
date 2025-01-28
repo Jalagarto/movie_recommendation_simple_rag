@@ -10,6 +10,7 @@ sys.path.append(str(src_path))
 from src.agents.agent_router import route_query
 
 def main():
+    st.set_page_config(page_title="Movie Recommendation")
     st.title("Movie Recommendation Chatbot")
     
     # Add some description

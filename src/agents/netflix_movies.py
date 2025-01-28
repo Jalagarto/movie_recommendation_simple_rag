@@ -1,22 +1,27 @@
+"""
+Agent 2: Netflix Movies
+    Functionality:
+        Fetch trending movies from netflix_titles.csv.
+        Expands query and uses NLP to preprocess possible matches
+        Use OpenAI API to generate recommendations based on the queries.
+"""
+
 import pandas as pd
 import requests
-
+import json
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 # Add the parent directory to sys.path
 import sys, os
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.append(parent_dir)
-import json
+
 from utils import connect_api as conn
-
-
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
 
 
 def load_netflix_data():
     """Load the Netflix dataset."""
     return pd.read_csv("./src/data/netflix_titles.csv")
-    # return pd.read_csv("../data/netflix_titles.csv")
 
 class NLPAgent:
     def __init__(self, data):
@@ -26,7 +31,7 @@ class NLPAgent:
 
     def expand_query(self, query):
         """Expand the query with synonyms or related terms."""
-        # Example: Add synonyms (you can use a library like WordNet or an API)
+        # Add synonyms (Hard coded for now, but could use something like WordNet)
         synonyms = {
             "action": ["thriller", "adventure", "exciting"],
             "romantic": ["love", "romance", "heartwarming"],
@@ -75,7 +80,7 @@ def recommend_netflix_movie(query, concise=True):
 
     # Define the request payload
     request = {
-        "model": "gpt-4o-mini",  # Use the appropriate model name
+        "model": conn.OPENAI_MODEL,
         "messages": [
             {"role": "system", "content": "You are a movie recommendation assistant."},
             {"role": "user", "content": prompt}
@@ -112,7 +117,6 @@ def recommend_netflix_movie(query, concise=True):
                                 delta = chunk_json["choices"][0].get("delta", {})
                                 if "content" in delta:
                                     recommendation += delta["content"]
-                                    # print(delta["content"], end="", flush=True)  # Print incrementally
                         except json.JSONDecodeError:
                             continue
 

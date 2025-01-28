@@ -1,16 +1,13 @@
 """
 Agent 1: Trending Movies
-
     Functionality:
-
         Fetch trending movies from the TMDB API (https://api.themoviedb.org/3/trending/movie/day).
-
-        Use OpenAI models to generate recommendations based on user queries.
+        Use OpenAI API to generate recommendations based on user queries.
 """
-
 import requests
-from src.utils import connect_api as conn
 import os
+from src.utils import connect_api as conn
+
 
 def get_trending_movies():
     url = "https://api.themoviedb.org/3/trending/movie/day"
@@ -27,7 +24,7 @@ def recommend_trending_movie(query):
 
     # Define the request 
     request = {
-        "model": "gpt-4o-mini",
+        "model": conn.OPENAI_MODEL,
         "messages": [
             {"role": "system", "content": "You are a helpful assistant."},
             {"role": "user", "content": prompt}
@@ -47,3 +44,4 @@ def recommend_trending_movie(query):
     )    
 
     return response.json()['choices'][0]['message']['content']
+
