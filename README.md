@@ -1,8 +1,8 @@
 ### How to Run it
 
-run it using docker:
+Run it using docker:
 1. build the docker image: `docker build . -t movie-recommendation-app`
-2. run it: `docker run movie-recommendation-app`
+2. run it: `docker run -p 8501:8501 movie-recommendation-app`
 
 or run it locally:
 1. Install all dependencies: 
@@ -10,9 +10,10 @@ or run it locally:
    2. `poetry install --with dev` to install production and dev dependencies
 2. `poetry run streamlit run src/app/serve.py`  or `streamlit run src/app/serve.py`
 
-to execute tets I use: 
+To execute tets use: 
 `poetry run pytest tests/`
-to see the code coverage report:
+
+To also see the code coverage report:
 `poetry run pytest tests/ --cov=src --cov-report=term-missing --cov-report=xml`
 
 Note that main.py is there to be used locally, but not in production

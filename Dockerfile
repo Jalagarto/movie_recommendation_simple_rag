@@ -16,9 +16,5 @@ RUN pip install poetry && \
 # Copy the rest of the application code
 COPY . .
 
-# Expose the port the app runs on
-EXPOSE 8000
-
 # Command to run the application
-# CMD ["streamlit", "run", "src/app/serve.py"]
-CMD ["streamlit", "run", "src/app/serve.py", "--server.port", "8000"]
+CMD ["streamlit", "run", "src/app/serve.py"]
