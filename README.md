@@ -6,7 +6,7 @@ or run it locally:
 1. Install all dependencies: 
    1. `pip install poetry` if you do not have it installed in your env
    2. `poetry install --with dev` to install production and dev dependencies
-2. `streamlit run src/app/serve.py`
+2. `poetry run streamlit run src/app/serve.py`  or `streamlit run src/app/serve.py`
 
 to execute tets I use: 
 `poetry run pytest tests/`
