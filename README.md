@@ -20,10 +20,11 @@ Note that main.py is there to be used locally, but not in production
 
 
 #### Basic Project structure:
-
+```
 ├── src
 │   ├── agents
 │   ├── app
 │   ├── data
 │   └── utils
 └── tests
+```
