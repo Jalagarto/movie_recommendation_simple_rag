@@ -1,4 +1,3 @@
-from src.agents.trending_movies import recommend_trending_movie
+from src.agents.agent_router import route_query
 
-
-recommend_trending_movie("What is the current best movie released lately")
+route_query("What is the current best movie released lately on netflix")

@@ -1,3 +1,5 @@
+### How to Run it
+
 run it using docker:
 1. build the docker image: `docker build . -t movie-recommendation-app`
 2. run it: `docker run movie-recommendation-app`
@@ -12,3 +14,15 @@ to execute tets I use:
 `poetry run pytest tests/`
 to see the code coverage report:
 `poetry run pytest tests/ --cov=src --cov-report=term-missing --cov-report=xml`
+
+Note that main.py is there to be used locally, but not in production
+
+
+#### Basic Project structure:
+
+├── src
+│   ├── agents
+│   ├── app
+│   ├── data
+│   └── utils
+└── tests

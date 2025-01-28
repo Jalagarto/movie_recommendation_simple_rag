@@ -2,18 +2,19 @@ from .trending_movies import recommend_trending_movie
 from .netflix_movies import recommend_netflix_movie
 from loguru import logger
 
-NETFLIX_AGENT = 'NEXFLIX'
-TRENDY_AGENT = 'TRENDY'
+NETFLIX_AGENT = "NEXFLIX"
+TRENDY_AGENT = "TRENDY"
 
-def route_query(query):
+
+def route_query(query: str) -> tuple[str, str]:
     """
     Route the query to the appropriate recommendation function
-    
+
     Parameters:
     -----------
     query : str
         User input query
-        
+
     Returns:
     --------
     str
