@@ -29,4 +29,4 @@ Note that main.py is there to be used locally, but not in production
 └── tests
 ```
 
-For more info see the [wiki](https://github.com/Jalagarto/movie_recommendation_simple_rag/wiki/Movie-Recommendation-Chatbot-with-RAG)
+To access the Documentation and a Report of the works done see the [wiki](https://github.com/Jalagarto/movie_recommendation_simple_rag/wiki/Movie-Recommendation-Chatbot-with-RAG)
