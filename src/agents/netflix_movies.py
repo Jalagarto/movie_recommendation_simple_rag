@@ -54,7 +54,6 @@ class NLPAgent:
         similarities = cosine_similarity(query_vec, self.tfidf_matrix).flatten()
         top_indices = similarities.argsort()[-top_n:][::-1]
 
-        breakpoint()
         return self.data.iloc[top_indices]
 
 
